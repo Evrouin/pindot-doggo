@@ -13,7 +13,13 @@
   background-color: #fbaf3f;
 }
 
-img, img:focus {
+img,
+img:focus {
   box-shadow: none;
   outline: none !important;
+}
+
+.doggo {
+  width: 168px;
+  height: 183px;
 }
