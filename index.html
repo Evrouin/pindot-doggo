@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <title>PindotDoggo</title>
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/styles.css" />
+        <title>PindotDoggo</title>
+    </head>
 
-  <body>
-    <div class="container" onmouseout="supercry()">
-      <img class="doggo" src="./images/tampo.png" alt="doggo-default" usemap="#doggo" width="168" height="183" onmouseover="reset()" onmouseleave="cry()" />
-      <map name="doggo">
-        <area alt="doggo-nose" coords="78,94,11" shape="circle" onmouseover="boop()" onclick="cool()" />
-        <area alt="doggo-forehead" coords="13,58,10,26,26,4,56,25,110,24,142,6,159,24,156,61,82,42" shape="poly" onmouseover="puso()" onclick="cool()" onmouseleave="reset()" />
-        <area alt="dogoo-chin" coords="126,168,92,179,41,169,20,146,87,155,149,146" shape="poly" onmouseover="happy()" onclick="cool()" onmouseleave="reset()" />
-        <area alt="doggo-left-eye" coords="58,78,8" shape="circle" onclick="angy()" />
-        <area alt="doggo-right-eye" coords="104,80,8" shape="circle" onclick="angy()" />
-      </map>
-    </div>
-    <script>
-      let doggo = document.querySelector(".doggo");
-      const boop = () => (doggo.src = "./images/gulat.png");
-      const puso = () => (doggo.src = "./images/love.png");
-      const cool = () => (doggo.src = "./images/cool.png");
-      const happy = () => (doggo.src = "./images/openmouth.png");
-      const cry = () => (doggo.src = "./images/tampo.png");
-      const angy = () => (doggo.src = "./images/angy.png");
-      const supercry = () => (doggo.src = "./images/supercry.png");
-      const reset = () => (doggo.src = "./images/medj_tampo.png");
-    </script>
-  </body>
+    <body onmouseout="supercry()">
+        <div class="container">
+            <img class="doggo" src="./images/tampo.png" alt="doggo-default" usemap="#doggo" />
+            <map name="doggo">
+                <area alt="doggo-nose" coords="78,94,11" shape="circle" onmouseover="changeImg('./images/gulat.png')" onclick="changeImg('./images/cool.png')" />
+                <area
+                    alt="doggo-forehead"
+                    coords="13,58,10,26,26,4,56,25,110,24,142,6,159,24,156,61,82,42"
+                    shape="poly"
+                    onmouseover="changeImg('./images/love.png')"
+                    onclick="changeImg('./images/cool.png')"
+                    onmouseleave="changeImg('./images/medj_tampo.png')"
+                />
+                <area
+                    alt="doggo-chin"
+                    coords="126,168,92,179,41,169,20,146,87,155,149,146"
+                    shape="poly"
+                    onmouseover="changeImg('./images/openmouth.png')"
+                    onclick="changeImg('./images/cool.png')"
+                    onmouseleave="changeImg('./images/medj_tampo.png')"
+                />
+                <area 
+                    alt="doggo-left-eye" 
+                    coords="58,78,8" 
+                    shape="circle" 
+                    onclick="changeImg('./images/angy.png')" />
+                <area 
+                    alt="doggo-right-eye" 
+                    coords="104,80,8" 
+                    shape="circle" 
+                    onclick="changeImg('./images/angy.png')" />
+            </map>
+        </div>
+        <script>
+            let doggo = document.querySelector(".doggo");
+            const changeImg = (src) => (doggo.src = src);
+            const supercry = () => (doggo.src = "./images/supercry.png");
+        </script>
+    </body>
 </html>
